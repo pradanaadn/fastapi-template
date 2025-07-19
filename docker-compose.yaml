@@ -2,6 +2,16 @@ networks:
   loki:
 
 services:
+  fastapi:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - loki
+    volumes:
+      - .:/app
   loki:
     image: grafana/loki:latest
     ports:
