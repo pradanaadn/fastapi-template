@@ -5,12 +5,10 @@ app = FastAPI()
 
 
 @app.get("/")
-def main():
+def main() -> dict:
     return {"message": "Hello from fastapi-template!"}
 
 
 @app.get("/scalar/docs", include_in_schema=False)
 def scalar_docs():
-    return get_scalar_api_reference(
-        openapi_url=app.openapi_url, title=app.title
-    )
+    return get_scalar_api_reference(openapi_url=app.openapi_url, title=app.title)
