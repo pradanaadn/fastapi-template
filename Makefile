@@ -6,3 +6,6 @@ down-docker:
 
 pre-commit-setup:
 	uv run pre-commit install
+
+pre-commit-run:
+	uv run pre-commit run --all-files --verbose --show-diff-on-failure
